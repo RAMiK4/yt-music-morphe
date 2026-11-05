@@ -1,0 +1,17 @@
+{
+  "build": 2,
+  "variant": "morphe",
+  "package": "app.morphe.android.apps.youtube.music",
+  "yt_version": "9.44.52",
+  "patches": "2.1.0-dev.11",
+  "tag": "v9.44.52-p2.1.0-dev.11-b2",
+  "apk_url": "https://github.com/RAMiK4/yt-music-morphe/releases/download/v9.44.52-p2.1.0-dev.11-b2/YT_Music_Morphe-v9.44.52-p2.1.0-dev.11_Amoled_Mod.apk",
+  "release_url": "https://github.com/RAMiK4/yt-music-morphe/releases/tag/v9.44.52-p2.1.0-dev.11-b2",
+  "forum_url": "",
+  "changelog": "✨ New Features\n• Debugging: Block/force offline feature flags\n• Downloads: Add album and playlist downloads\n• Third-party lyrics: Add reactive dynamic background layout refinements, and automatic ruby generation\n• Hide layout components: Add \"Hide GIF button\" and \"Hide GIFs and images\" comment settings\n• Add playlist creation from downloaded music tracks\n• GmsCore support: Support video/audio casting to other devices (Requires latest MicroG-RE)\n\n🌟 Mod Features\n• All Morphe patches for YouTube Music\n• Customizable preset settings\n• Extra clone variant with Dynamic Island on supported devices\n• In-app update check for new builds\n\n🐛 Bug Fixes\n• Non-experimental targets do not patch\n• Spoof video streams: Do not block get_watch, initplayback, or Onesie requests\n• Downloads: Downloading with flyout menu shows premium popup\n• Downloads: Downloads screen freezes with a large catalogue\n• Downloads: Offline playback crashes with a large queue\n• Spoof video streams: Video opened from the search results can load forever when another video is fetched at the same time\n• Downloads: Offline playback audio focus handling\n• Hide flyout menu components: Fix patching 9.44.52\n• Settings: App crashes when opening settings with 9.44.52\n• Third-party lyrics: Various minor bug fixes",
+  "changelogs": {
+    "en": "✨ New Features\n• Debugging: Block/force offline feature flags\n• Downloads: Add album and playlist downloads\n• Third-party lyrics: Add reactive dynamic background layout refinements, and automatic ruby generation\n• Hide layout components: Add \"Hide GIF button\" and \"Hide GIFs and images\" comment settings\n• Add playlist creation from downloaded music tracks\n• GmsCore support: Support video/audio casting to other devices (Requires latest MicroG-RE)\n\n🌟 Mod Features\n• All Morphe patches for YouTube Music\n• Customizable preset settings\n• Extra clone variant with Dynamic Island on supported devices\n• In-app update check for new builds\n\n🐛 Bug Fixes\n• Non-experimental targets do not patch\n• Spoof video streams: Do not block get_watch, initplayback, or Onesie requests\n• Downloads: Downloading with flyout menu shows premium popup\n• Downloads: Downloads screen freezes with a large catalogue\n• Downloads: Offline playback crashes with a large queue\n• Spoof video streams: Video opened from the search results can load forever when another video is fetched at the same time\n• Downloads: Offline playback audio focus handling\n• Hide flyout menu components: Fix patching 9.44.52\n• Settings: App crashes when opening settings with 9.44.52\n• Third-party lyrics: Various minor bug fixes"
+  },
+  "sha256": "e91254c5e7bdbfa1f59b6c3836c26c4c731646aeb12cd9f6e97f5e7537fd652f",
+  "size": 85386351
+}
