@@ -26,7 +26,7 @@ The changes of each version are listed in the [releases](https://github.com/RAMi
 | Variant | Package | |
 |---|---|---|
 | **Amoled** | `app.morphe.android.apps.youtube.music` | Material You and themes, pure black by default |
-| **Original** (BBK Clone) | `com.apple.android.music` | Material You and themes, modern dark by default, plus Dynamic Island for BBK devices |
+| **Original** (BBK Clone) | `com.apple.android.music` | Material You and themes, modern dark by default, plus Dynamic Island for BBK all devices |
 
 Both variants can be installed side by side. The theme color can be changed at any time: *Morphe settings → General*.
 
