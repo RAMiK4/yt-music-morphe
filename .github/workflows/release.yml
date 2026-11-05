@@ -349,10 +349,10 @@ jobs:
             echo "::endgroup::"
           }
 
-          # Original: the dark color of YouTube Music itself
+          # Original: dark #0F0F0F as a custom color, so that the menus get it too (APP_DEFAULT keeps their own color)
           build_variant apple  "Original_Mod_BBK_Clone" "Original_Mod_BBK_Clone" \
             com.apple.android.music true \
-            '{"darkDefault":"APP_DEFAULT"}'
+            '{"darkDefault":"CUSTOM"}'
           # Amoled: black #000000 (Morphe default)
           # Test builds (not published): only the clone variant, which is the one tested
           if [ "${{ inputs.publish }}" != "false" ] && [ -z "${{ inputs.patches_source }}" ]; then
