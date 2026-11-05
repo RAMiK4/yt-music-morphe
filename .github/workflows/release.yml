@@ -156,7 +156,22 @@ jobs:
 
       - name: Download Morphe CLI
         run: |
-          gh release download -R MorpheApp/morphe-cli -p 'morphe-desktop-*-all.jar' -D "$RUNNER_TEMP/cli"
+          # The CLI must use the same patcher as the patches, or it cannot load them
+          # (a dev version of the patches can need a dev version of the CLI).
+          PATCHER=$(sed -n 's/^morphe-patcher *= *"\(.*\)"/\1/p' patches-src/gradle/libs.versions.toml)
+          echo "Patcher of the patches: $PATCHER"
+          CLI_TAG=""
+          for tag in $(gh api "repos/MorpheApp/morphe-cli/releases?per_page=30" -q '.[] | select(.draft | not) | .tag_name'); do
+            cli_patcher=$(gh api "repos/MorpheApp/morphe-cli/contents/gradle/libs.versions.toml?ref=$tag" -q .content \
+              | base64 -d | sed -n 's/^morphe-patcher *= *"\(.*\)"/\1/p')
+            if [ "$cli_patcher" = "$PATCHER" ]; then CLI_TAG=$tag; break; fi
+          done
+          if [ -z "$CLI_TAG" ]; then
+            CLI_TAG=$(gh api "repos/MorpheApp/morphe-cli/releases/latest" -q .tag_name)
+            echo "::warning::No Morphe CLI uses patcher $PATCHER, using the latest release $CLI_TAG"
+          fi
+          echo "Morphe CLI: $CLI_TAG"
+          gh release download "$CLI_TAG" -R MorpheApp/morphe-cli -p 'morphe-desktop-*-all.jar' -D "$RUNNER_TEMP/cli"
           mv "$RUNNER_TEMP"/cli/*.jar "$RUNNER_TEMP/morphe-cli.jar"
 
       - name: Download source APK
