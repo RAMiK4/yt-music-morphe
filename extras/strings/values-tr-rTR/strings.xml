@@ -1,0 +1,18 @@
+    <!-- extras: Update checker -->
+    <string name="morphe_settings_music_screen_0_updates_title">Güncellemeler</string>
+    <string name="morphe_update_check_title">Güncellemeleri denetle</string>
+    <string name="morphe_update_check_summary">Açılışta yeni sürümü denetle</string>
+    <string name="morphe_update_check_now_title">Şimdi denetle</string>
+    <string name="morphe_update_check_now_summary">Yeni sürüm olup olmadığını denetle</string>
+    <string name="morphe_update_dialog_title">Güncelleme mevcut</string>
+    <string name="morphe_update_dialog_version">YT Music Morphe v%1$s p%2$s</string>
+    <string name="morphe_update_dialog_download">İndir</string>
+    <string name="morphe_update_dialog_skip">Bu sürümü atla</string>
+    <string name="morphe_update_dialog_later">Daha sonra</string>
+    <string name="morphe_update_latest">En son sürümü kullanıyorsunuz</string>
+    <string name="morphe_update_failed">Güncellemeler denetlenemedi</string>
+
+    <!-- extras: Default settings -->
+    <string name="morphe_defaults_restart_message">Yeni önerilen ayarlar uygulandı. Tamamının geçerli olması için uygulamayı yeniden başlatın.</string>
+    <string name="morphe_extras_restart_updated">Uygulama güncellendi. Ayarların ve görünümün doğru uygulanması için yeniden başlatın.</string>
+
