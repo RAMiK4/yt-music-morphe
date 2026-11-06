@@ -22,6 +22,14 @@ The changelog is generated from the Morphe changelog (YouTube Music only), in th
 
 Variant options (package, theme defaults) are set in `build_variant` calls of `.github/workflows/release.yml`.
 
+## Downloads (Cloudflare R2)
+
+When the variable `DL_BASE_URL` is set, published builds are also uploaded to the R2 bucket `R2_BUCKET`, below `music/`: the APKs to `music/apk/`, the update info to `music/updates/<variant>.json`. The apps check `DL_BASE_URL/music/updates/<variant>.json` and download the APK from `DL_BASE_URL/music/apk/`, so they no longer depend on GitHub. The APKs of the last 3 builds are kept. The bucket and its Worker are shared with YouTube Morphe (`cloudflare/worker.js` in RAMiK4/youtube-morphe), which uses the root of the bucket. `updates/*.json` in this repository stays up to date for builds that still check GitHub.
+
+`r2_test` (test builds, with `update_preview`): the APK and its update info are uploaded as test files (`music/apk/test_*`, `music/updates/*-test.json`) and the APK checks those; the next published build removes them.
+
+The update address is built into each APK: `DL_BASE_URL` must not change, or the builds that use it stop getting updates.
+
 ## Secrets (Settings → Secrets and variables → Actions)
 
 | Name | Type | Value |
@@ -31,3 +39,8 @@ Variant options (package, theme defaults) are set in `build_variant` calls of `.
 | `KEY_ALIAS` | secret | Key alias (empty: `Morphe`) |
 | `KEY_PASSWORD` | secret | Key password (empty: `Morphe`) |
 | `CERT_SHA256` | variable | SHA-256 fingerprint of the signing certificate |
+| `R2_ACCOUNT_ID` | secret | Cloudflare account ID |
+| `R2_ACCESS_KEY_ID` | secret | R2 API token: access key ID (Object Read & Write, bucket only) |
+| `R2_SECRET_ACCESS_KEY` | secret | R2 API token: secret access key |
+| `R2_BUCKET` | variable | R2 bucket name |
+| `DL_BASE_URL` | variable | Address of the Worker, without a trailing slash |
