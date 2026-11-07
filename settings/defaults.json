@@ -5,7 +5,6 @@
   "external_downloader_name": "com.rl.ytindr",
   "header_logo": "custom",
   "music_change_miniplayer_color": true,
-  "music_crossfade_enabled": true,
   "music_enable_audio_video_switch": true,
   "music_enable_forced_miniplayer": true,
   "music_hide_cast_button": true,
