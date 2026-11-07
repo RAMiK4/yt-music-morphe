@@ -2,7 +2,7 @@
 
 [b]Тип:[/b] Модификация
 [b]Версия:[/b] 9.44.52
-[b]Краткое описание:[/b] YouTube Music Morphe patch v2.1.0, Amoled+ & Original + BBK Clone
+[b]Краткое описание:[/b] YouTube Music Morphe patch v2.1.0, Amoled & Original + BBK Clone
 
 [spoiler=☑ Информация о моде »]
 
@@ -15,7 +15,7 @@
 [b]• Тема (версии):[/b] Original Black, Amoled Black + Material You + Разные
 [b]• Dynamic Island:[/b] Для BBK (all): vivo, iqoo, oppo, oneplus
 
-[size=1]ⓘ Название приложения, иконку, логотип, тему оформления и макет интерфейса можно изменить и настроить как угодно: Настройки > Morphe > Общие ⫶[/size]
+[size=1]ⓘ Название приложения, иконку, логотип и тему оформления можно изменить и настроить как угодно: Настройки > Morphe > Общие ⫶[/size]
 
 [/spoiler]
 [spoiler=✔ Что нового в моде »]
@@ -39,8 +39,6 @@
 
 ✓ Все патчи Morphe для YouTube Music
 ✓ Воспроизведение аудиоверсий треков в альбомах вместо видео
-✓ Возможность заполнения отсутствующих альбомов
-✓ Выбор пользовательской частоты обновления (FPS) в приложении
 ✓ Выбор различных тем и настройка собственных цветов оформления прямо в настройках приложения
 ✓ Готовые настройки в стиле Premium с возможностью изменения
 ✓ Дополнительная клон-версия с Dynamic Island на поддерживаемых устройствах
@@ -51,23 +49,20 @@
 
 [spoiler=⌹ Скриншоты »]
 
-[center][size=1]Amoled Black
-
-
-Original Black
-[/size][/center]
+[center][size=1]Amoled  |  Original
+S1 S2[/size][/center]
 
 [/spoiler]
 
 [center][b]Скачать ↆ Download[/b][/center]
 
-▷ Amoled+ [b][color="#ff0044"]YT Music Morphe v9.44.52[/color][/b] p2.1.0 Mod ✓
+▷ Amoled [b][color="#ff0044"]YT Music Morphe v9.44.52[/color][/b] p2.1.0 Mod ✓
 
-[size=1]ⓘ Amoled+ версия поддерживает Material You и различные темы оформления ⫶ Настройки > Morphe > Общие[/size]
+[size=1]ⓘ Amoled версия поддерживает Material You и различные темы оформления ⫶ Настройки > Morphe > Общие[/size]
 
-▷ Original+ [b][color="#ff0044"]YT Music Morphe v9.44.52[/color][/b] p2.1.0 Mod (Clone) ✓
+▷ Original [b][color="#ff0044"]YT Music Morphe v9.44.52[/color][/b] p2.1.0 Mod (Clone) ✓
 
-[size=1]ⓘ Original+ версия поддерживает Material You и различные темы оформления + BBK Dynamic Island (all: vivo, iqoo, oppo, oneplus)[/size]
+[size=1]ⓘ Original версия поддерживает Material You и различные темы оформления + BBK Dynamic Island (all: vivo, iqoo, oppo, oneplus)[/size]
 
 [spoiler=★ Рекомендуемые настройки для YT Music Morphe от автора »]
 
