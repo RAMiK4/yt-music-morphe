@@ -12,6 +12,16 @@ Every published build becomes the latest release. The workflow builds the offici
 
 The changelog is generated from the Morphe changelog (YouTube Music only), in the same way as in `youtube-morphe`. Fixes of the mod go under `## <patches version>` in `notes/mod-fixes.md`; important features of skipped versions under `## <patches version>` in `notes/extra-features.md`; the features of the mod are in `notes/mod-features.md`.
 
+## 4PDA post
+
+`notes/4pda-post.txt` is the post for the 4PDA topic, updated for each release (YT Music and patches versions, What's new, links), in the same layout as the post of `youtube-morphe`.
+
+- An empty line after each `[spoiler=...]` title
+- No "test version" note next to dev patches versions, users could misread it
+- What's new is a plain list, without a line for the YT Music and patches versions. A stable version lists its full changelog, the best YT Music features first; a dev version lists the new features of the last 2 dev versions
+- Link titles in `[color="#808080"]`, followed by the file size
+- Below the `YT Music Morphe Settings` title, a 🔗 link to `YT_Music_Settings_v<patches version>.txt` of the release (`releases/download/<tag>/...`) with its size
+
 ## Configuration
 
 | File | Purpose |
