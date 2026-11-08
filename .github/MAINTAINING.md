@@ -8,7 +8,7 @@
    - `publish`: unchecked builds a test APK (clone variant only) into the run's *Artifacts*
    - `update_preview` (test builds): the APK offers the latest release, to see the update dialog
 
-Every published build becomes the latest release. The workflow builds the official Morphe patches with the additions in `extras/`, verifies package name and signature, publishes the release (the two APKs, then `YT_Music_Settings_v<patches version>.txt` with the settings of `settings/defaults.json`) and updates `updates/*.json` for the in-app update check.
+Every published build becomes the latest release. The workflow builds the official Morphe patches with the additions in `extras/`, verifies package name and signature, uploads the two APKs to R2, publishes the release (`YT_Music_Settings_v<patches version>.txt` with the settings of `settings/defaults.json`, and links to the APKs on R2) and updates `updates/*.json` for the in-app update check.
 
 The changelog is generated from the Morphe changelog (YouTube Music only), in the same way as in `youtube-morphe`. Fixes of the mod go under `## <patches version>` in `notes/mod-fixes.md`; important features of skipped versions under `## <patches version>` in `notes/extra-features.md`; the features of the mod are in `notes/mod-features.md`.
 
@@ -34,7 +34,7 @@ Variant options (package, theme defaults) are set in `build_variant` calls of `.
 
 ## Downloads (Cloudflare R2)
 
-When the variable `DL_BASE_URL` is set, published builds are also uploaded to the R2 bucket `R2_BUCKET`, below `music/`: the APKs to `music/apk/`, the update info to `music/updates/<variant>.json`. The apps check `DL_BASE_URL/music/updates/<variant>.json` and download the APK from `DL_BASE_URL/music/apk/`, so they no longer depend on GitHub. The APKs of the last 3 builds are kept. The bucket and its Worker are shared with YouTube Morphe (`cloudflare/worker.js` in RAMiK4/youtube-morphe), which uses the root of the bucket. `updates/*.json` in this repository stays up to date for builds that still check GitHub.
+Published builds are uploaded to the R2 bucket `R2_BUCKET`, below `music/` (the variable `DL_BASE_URL` is required to publish; the APKs are not attached to the GitHub release): the APKs to `music/apk/`, the update info to `music/updates/<variant>.json`. The apps check `DL_BASE_URL/music/updates/<variant>.json` and download the APK from `DL_BASE_URL/music/apk/`, so they no longer depend on GitHub. The APKs of the last 3 builds are kept. The bucket and its Worker are shared with YT Morphe (`cloudflare/worker.js` in RAMiK4/youtube-morphe), which uses the root of the bucket. `updates/*.json` in this repository stays up to date for builds that still check GitHub.
 
 `r2_test` (test builds, with `update_preview`): the APK and its update info are uploaded as test files (`music/apk/test_*`, `music/updates/*-test.json`) and the APK checks those; the next published build removes them.
 
