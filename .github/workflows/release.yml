@@ -43,9 +43,9 @@ concurrency:
 env:
   PATCHES_REPO: MorpheApp/morphe-patches
   APP_TITLE: YT Music Morphe
-  APP_NAME: YT Music
+  APP_NAME: YT Music Morphe
   APP_PACKAGE: com.google.android.apps.youtube.music
-  # APKs and update info on Cloudflare R2 below music/, served by the Worker of RAMiK4/youtube-morphe
+  # APKs and update info on Cloudflare R2 below music/, served by the Worker of RAMiK4/yt-morphe
   # (cloudflare/worker.js). DL_BASE_URL is required to publish
   DL_BASE_URL: ${{ vars.DL_BASE_URL }}
   R2_BUCKET: ${{ vars.R2_BUCKET }}
@@ -475,10 +475,10 @@ jobs:
             echo
             echo "## 📦 Files"
             echo
-            echo "| File | Package |"
+            echo "| File | Theme |"
             echo "|---|---|"
-            echo "| $(apk_link "$MORPHE") | \`app.morphe.android.apps.youtube.music\` |"
-            echo "| $(apk_link "$CLONE") | \`com.apple.android.music\` |"
+            echo "| $(apk_link "$MORPHE") | Pure black by default |"
+            echo "| $(apk_link "$CLONE") | Modern dark by default |"
             echo "| \`$SETTINGS\` | Recommended settings |"
           } > "$RUNNER_TEMP/notes.md"
           gh release create "$TAG" "$RUNNER_TEMP/$SETTINGS#$SETTINGS" \
