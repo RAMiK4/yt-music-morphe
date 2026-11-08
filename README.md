@@ -4,7 +4,7 @@
 
 # YT Music Morphe
 
-YouTube Music with all [Morphe](https://github.com/MorpheApp/morphe-patches) patches and ready-made settings.
+YT Music with all [Morphe](https://github.com/MorpheApp/morphe-patches) patches and ready-made settings.
 
 [![Latest release](https://img.shields.io/github/v/release/RAMiK4/yt-music-morphe?label=Download&sort=date&style=for-the-badge)](https://github.com/RAMiK4/yt-music-morphe/releases/latest)
 
@@ -14,7 +14,7 @@ YouTube Music with all [Morphe](https://github.com/MorpheApp/morphe-patches) pat
 
 | | |
 |---|---|
-| 🧩 **All Morphe patches for YouTube Music** | Built on the official Morphe patches, which are never modified |
+| 🧩 **All Morphe patches for YT Music** | Built on the official Morphe patches, which are never modified |
 | ⚙️ **Customizable preset settings** | Ready to use from the first start. Your own changes are always kept |
 | 🏝️ **Extra clone variant** | Dynamic Island on supported devices |
 | 🔔 **In-app update check** | New builds are shown in the app: *Morphe settings → Updates* |
@@ -25,8 +25,8 @@ The changes of each version are listed in the [releases](https://github.com/RAMi
 
 | Variant | |
 |---|---|
-| **Amoled** | Material You and themes, pure black by default |
-| **Original** (BBK Clone) | Material You and themes, modern dark by default, plus Dynamic Island for BBK all devices |
+| **Amoled** | Pure black by default, Material and other themes |
+| **Original** (BBK Clone) | Modern dark by default, Material and other themes, plus Dynamic Island for BBK all devices |
 
 Both variants can be installed side by side. The theme color can be changed at any time: *Morphe settings → General*.
 
