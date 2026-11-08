@@ -1,8 +1,8 @@
-[img]https://4pda.to/static/c/img/att-3536/35366971.png[/img]  [size=2][b][color="#ff0044"]YT Music Morphe[/color][/b][/size] v9.44.52 Mod ✓
+[img]https://4pda.to/static/c/img/att-3536/35366971.png[/img]  [size=2][b][color="#ff0044"]YT Music Morphe[/color][/b][/size] v9.45.51 Mod ✓
 
 [b]Тип:[/b] Модификация
-[b]Версия:[/b] 9.44.52
-[b]Краткое описание:[/b] YouTube Music Morphe patch v2.1.0, Amoled & Original + BBK Clone
+[b]Версия:[/b] 9.45.51
+[b]Краткое описание:[/b] YT Music Morphe patch v2.2.0-dev.2, Amoled & Original + BBK Clone
 
 [spoiler=☑ Информация о моде »]
 
@@ -20,14 +20,8 @@
 [/spoiler]
 [spoiler=✔ Что нового в моде »]
 
-• Загрузки: скачивание альбомов и плейлистов, отметка скачанных треков в списках, полноэкранный офлайн-плеер
-• Загрузки: создание плейлистов из скачанных треков
-• Трансляция: поддержка трансляции видео и аудио на другие устройства (требуется последняя версия MicroG RE)
-• Новый патч «SoundProof»: блокировка музыки, созданной ИИ
-• Сторонние тексты песен: улучшенный динамический фон, реагирующий на музыку, и автоматическое добавление подсказок чтения (руби)
-• Новый патч «Теги плейлистов»
-• Комментарии: скрытие кнопки GIF, а также GIF и изображений
-• Отладка: блокировка и принудительное включение офлайн-флагов функций
+• Панель навигации: новая настройка «Стеклянная панель навигации»
+• Сторонние тексты песен: поддержка TTML, улучшенные подсказки чтения (руби) и романизация
 
 [size=1]✓ Исправлены ошибки, различные улучшения[/size]
 
@@ -56,11 +50,11 @@ S1 S2[/size][/center]
 
 [center][b]Скачать ↆ Download[/b][/center]
 
-▷ Amoled [b][color="#ff0044"]YT Music Morphe v9.44.52[/color][/b] p2.1.0 Mod ✓
+▷ Amoled [b][color="#ff0044"]YT Music Morphe v9.45.51[/color][/b] p2.2.0-dev.2 Mod ✓
 
 [size=1]ⓘ Amoled версия поддерживает Material You и различные темы оформления ⫶ Настройки > Morphe > Общие[/size]
 
-▷ Original [b][color="#ff0044"]YT Music Morphe v9.44.52[/color][/b] p2.1.0 Mod (Clone) ✓
+▷ Original [b][color="#ff0044"]YT Music Morphe v9.45.51[/color][/b] p2.2.0-dev.2 Mod (Clone) ✓
 
 [size=1]ⓘ Original версия поддерживает Material You и различные темы оформления + BBK Dynamic Island (all: vivo, iqoo, oppo, oneplus)[/size]
 
@@ -68,12 +62,12 @@ S1 S2[/size][/center]
 
 Чтобы мод работал максимально стабильно, с лучшими возможностями, и при этом оставался максимально похожим на оригинальный [b]YT Music (Premium)[/b], попробуйте эти [b]«рекомендуемые настройки»[/b]
 [b]✔ [color="#ff0044"] YT Music Morphe Settings[/color][/b]
-🔗 [url="https://github.com/RAMiK4/yt-music-morphe/releases/download/v9.44.52-p2.1.0-b19/YT_Music_Settings_v2.1.0.txt"][color="#808080"]YT_Music_Settings_v2.1.0.txt[/color][/url] (0,83 КБ)
+🔗 [url="https://github.com/RAMiK4/yt-music-morphe/releases/download/v9.45.51-p2.2.0-dev.2-b22/YT_Music_Settings_v2.2.0-dev.2.txt"][color="#808080"]YT_Music_Settings_v2.2.0-dev.2.txt[/color][/url] (0,79 КБ)
 
 ∆ Импортируйте текстовый файл или Скопируйте все значения из текстового файла и вставьте их в поле:
 ⓘ Настройки > Morphe > Прочие настройки > Резервное копирование настроек > вставить » Импортировать и Перезапустить ✓
 
-[size=1][i]обновлено для patch v2.1.0[/i]
+[size=1][i]обновлено для patch v2.2.0-dev.2[/i]
 
 ✓ Это бэкап настройки для быстрого старта, позже вы сможете настроить параметры под себя.[/size]
 
