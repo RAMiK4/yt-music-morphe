@@ -9,7 +9,7 @@
 [b]• Android:[/b] 8+ (8–17)
 [b]• Архитектура:[/b] arm64-v8a
 [b]• Языки:[/b] Все / Full Languages
-[b]• Название:[/b] YT Music [size=1](по умолчанию)[/size], YT Music Morphe, Music Morphe, Music
+[b]• Название:[/b] YT Music Morphe [size=1](по умолчанию)[/size], YT Music, Music Morphe, Music
 [b]• Иконка:[/b] mpYT [size=1](по умолчанию)[/size], Original, Morphe (black, dark, light), Morphe Play (black, light)
 [b]• Логотип заготовка:[/b] Original [size=1](по умолчанию)[/size], Morphe, mpYTM Music
 [b]• Тема (версии):[/b] Original Black, Amoled Black + Material You + Разные
