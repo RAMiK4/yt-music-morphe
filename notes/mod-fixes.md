@@ -2,7 +2,6 @@
 
 ## 2.3.0-dev.1
 
-* **Theme:** Bottom sheets do not follow theme
 * **Theme:** Menus and sheets (quick download, playlist tags, SoundProof...) stay grey `#212121` instead of the theme color. They now use the theme color, `#0F0F0F` in the Original and Amoled variants
 * **Updates:** The update dialog reminds to install the downloaded APK from the Downloads folder
 
