@@ -1,23 +1,9 @@
-[img]https://4pda.to/static/c/img/att-3536/35366971.png[/img]  [size=2][b][color="#ff0044"]YT Music Morphe[/color][/b][/size] v9.45.51 Mod ✓
+[img]https://4pda.to/static/c/img/att-3536/35366971.png[/img]  [size=2][b][color="#ff0040"]YT Music Morphe[/color][/b][/size] v9.45.51 Mod ✓
 
 [b]Тип:[/b] Модификация
 [b]Версия:[/b] 9.45.51
 [b]Краткое описание:[/b] YT Music Morphe patch v2.3.0-dev.1, Amoled & Original + BBK Clone
 
-[spoiler=☑ Информация о моде »]
-
-[b]• Android:[/b] 8+ (8–17)
-[b]• Архитектура:[/b] arm64-v8a
-[b]• Языки:[/b] Все / Full Languages
-[b]• Название:[/b] YT Music Morphe [size=1](по умолчанию)[/size], YT Music, Music Morphe, Music
-[b]• Иконка:[/b] mpYT [size=1](по умолчанию)[/size], Original, Morphe (black, dark, light), Morphe Play (black, light)
-[b]• Логотип заготовка:[/b] Original [size=1](по умолчанию)[/size], Morphe, mpYTM Music
-[b]• Тема (версии):[/b] Original Black, Amoled Black + Material You + Разные
-[b]• Dynamic Island:[/b] Для BBK (all): vivo, iqoo, oppo, oneplus
-
-[size=1]ⓘ Название приложения, иконку, логотип и тему оформления можно изменить и настроить как угодно: Настройки > Morphe > Общие ⫶[/size]
-
-[/spoiler]
 [spoiler=✔ Что нового в моде »]
 
 • Быстрое меню загрузки: качество и размер файлов перед загрузкой, MP3 выбран по умолчанию (YTindir)
@@ -34,8 +20,7 @@
 [size=1]ⓘ Подмена видеопотоков использует настройки Morphe по умолчанию. Если возникнут проблемы с воспроизведением, воспользуйтесь инструкциями ниже в разделе Помощь »[/size]
 
 [/spoiler]
-
-[b]★ Особенности мода:[/b]
+[spoiler=★ Особенности мода »]
 
 ✓ Все патчи Morphe для YouTube Music
 ✓ Воспроизведение аудиоверсий треков в альбомах вместо видео
@@ -46,51 +31,38 @@
 
 [right][size=1][i]» powered by[/i] [b]Morphe Patches[/b]
 [i]» extra features & patched by[/i] [b]Ramik ☆[/b][/size][/right]
-
-[spoiler=⌹ Скриншоты »]
-
-[center][size=1]Amoled  |  Original
-S1 S2[/size][/center]
-
 [/spoiler]
-
 [center][b]Скачать ↆ Download[/b][/center]
 
-▷ Amoled [b][color="#ff0044"]YT Music Morphe v9.45.51[/color][/b] p2.3.0-dev.1 Mod ✓
+▷ Amoled [b][color="#ff0040"]YT Music Morphe v9.45.51[/color][/b] p2.3.0-dev.1 Mod ✓
 
-[size=1]ⓘ Amoled версия поддерживает Material You и различные темы оформления ⫶ Настройки > Morphe > Общие[/size]
+▷ Original [b][color="#ff0040"]YT Music Morphe v9.45.51[/color][/b] p2.3.0-dev.1 Mod (Clone) ✓
 
-▷ Original [b][color="#ff0044"]YT Music Morphe v9.45.51[/color][/b] p2.3.0-dev.1 Mod (Clone) ✓
+[spoiler=☑ Информация о моде »]
 
-[size=1]ⓘ Original версия поддерживает Material You и различные темы оформления + BBK Dynamic Island (all: vivo, iqoo, oppo, oneplus)[/size]
+[b]• Android:[/b] 8+ (8–17)
+[b]• Архитектура:[/b] arm64-v8a
+[b]• Языки:[/b] Все / Full Languages
+[b]• Название:[/b] YT Music Morphe [size=1](по умолчанию)[/size], YT Music, Music Morphe, Music
+[b]• Иконка:[/b] mpYT [size=1](по умолчанию)[/size], Original, Morphe (black, dark, light), Morphe Play (black, light)
+[b]• Логотип заготовка:[/b] Original [size=1](по умолчанию)[/size], Morphe, mpYTM Music
+[b]• Тема (версии):[/b] Original Black, Amoled Black + Material You + Разные
+[b]• Dynamic Island:[/b] Для BBK (all): vivo, iqoo, oppo, oneplus
 
-[spoiler=★ Рекомендуемые настройки для YT Music Morphe от автора »]
-
-Чтобы мод работал максимально стабильно, с лучшими возможностями, и при этом оставался максимально похожим на оригинальный [b]YT Music (Premium)[/b], попробуйте эти [b]«рекомендуемые настройки»[/b]
-[b]✔ [color="#ff0044"] YT Music Morphe Settings[/color][/b]
-🔗 [url="https://github.com/RAMiK4/yt-music-morphe/releases/download/v9.45.51-p2.3.0-dev.1-b24/YT_Music_Settings_v2.3.0-dev.1.txt"][color="#808080"]YT_Music_Settings_v2.3.0-dev.1.txt[/color][/url] (0,88 КБ)
-
-∆ Импортируйте текстовый файл или Скопируйте все значения из текстового файла и вставьте их в поле:
-ⓘ Настройки > Morphe > Прочие настройки > Резервное копирование настроек > вставить » Импортировать и Перезапустить ✓
-
-[size=1][i]обновлено для patch v2.3.0-dev.1[/i]
-
-✓ Это бэкап настройки для быстрого старта, позже вы сможете настроить параметры под себя.[/size]
+[size=1]ⓘ Название приложения, иконку, логотип и тему оформления можно изменить и настроить как угодно: Настройки > Morphe > Общие ⫶[/size]
 
 [/spoiler]
-[spoiler=⊕ Для работы модов требуется MicroG »]
+[spoiler=⊕ Помощь »]
 
-[b]✔ [color="#ff0044"]MicroG RE[/color][/b] [size=1](by WSTxda)[/size]
+[b]⊕ Для работы модов требуется MicroG:[/b]
+[b]✔ [color="#ff0040"]MicroG RE[/color][/b] [size=1](by WSTxda)[/size]
 🔗 [url="https://github.com/MorpheApp/MicroG-RE/releases/download/7.3.0/microg-7.3.0-noicon-arm64-v8a.apk"][color="#808080"]MicroG_RE-7.3.0.apk[/color][/url] (43,5 МБ)
 [size=1][i](если эта версия MicroG уже установлена, скачивать её заново не нужно)[/i][/size]
 
 1 - Сначала нужно установить MicroG RE [size=1](и обязательно предоставить ему разрешение на работу в фоне)[/size]
 2 - А затем установить нужный мод YT Music Morphe [size=1](и для корректной работы уведомлений и других фоновых функций обязательно предоставьте ему разрешение на работу в фоне)[/size]
 
-[/spoiler]
-[spoiler=⊕ Помощь »]
-
-Если возникнут проблемы с воспроизведением видео:
+[b]⊕ Если возникнут проблемы с воспроизведением видео:[/b]
 [b]• Решение 1:[/b] Убедитесь, что в разделе «Подмена видеопотоков» выбран клиент по умолчанию → visionOS ✓ (или Android VR):
 ⓘ Настройки > Morphe > Прочие настройки > Подмена видеопотоков (активировать) > Клиент по умолчанию » выберите visionOS ✓
 

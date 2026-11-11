@@ -24,7 +24,8 @@ The first dev build after a stable version that was not released here (such as 2
 - No "test version" note next to dev patches versions, users could misread it
 - What's new is a plain list, without a line for the YT Music and patches versions. A stable version lists its full changelog, the best YT Music features first; a dev version lists the new features of the last 2 dev versions
 - Link titles in `[color="#808080"]`, followed by the file size
-- Below the `YT Music Morphe Settings` title, a 🔗 link to `YT_Music_Settings_v<patches version>.txt` of the release (`releases/download/<tag>/...`) with its size
+- Order: header, What's new, Mod features (spoiler), Download (one line per variant), Mod information, Help (MicroG and playback problems). Name color `#ff0040`
+- The recommended settings file is not linked in the post, it is on the release page
 
 ## Configuration
 
