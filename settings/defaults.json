@@ -3,6 +3,7 @@
   "disable_drc_audio": true,
   "external_downloader_menu": true,
   "external_downloader_name": "com.rl.ytindr",
+  "external_downloader_quick_menu": true,
   "header_logo": "custom",
   "morphe_patches_update_notice": "OFF",
   "music_change_miniplayer_color": true,

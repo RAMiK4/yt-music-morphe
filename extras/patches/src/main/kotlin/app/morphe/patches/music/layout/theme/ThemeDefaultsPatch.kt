@@ -53,7 +53,7 @@ val themeDefaultsPatch = bytecodePatch(
 ) {
     compatibleWith(COMPATIBILITY_YOUTUBE_MUSIC)
 
-    dependsOn(themePatch)
+    dependsOn(themePatch, menuColorPatch)
 
     val darkDefault by stringOption(
         key = "darkDefault",

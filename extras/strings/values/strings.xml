@@ -11,6 +11,7 @@
     <string name="morphe_update_dialog_later">Later</string>
     <string name="morphe_update_latest">You have the latest version</string>
     <string name="morphe_update_failed">Could not check for updates</string>
+    <string name="morphe_update_install_note">When the download is complete, install the new version from the Downloads folder</string>
 
     <!-- extras: Default settings -->
     <string name="morphe_defaults_restart_message">New recommended settings were applied. Restart the app to apply all of them.</string>
