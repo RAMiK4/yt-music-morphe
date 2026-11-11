@@ -4,7 +4,9 @@ Builds the YouTube Music part of the Morphe patches changelog for a patches vers
 
 Stable version: its own section (it already lists everything since the previous stable).
 Dev version: new features of the version itself, plus those of the previous dev when that one was not
-released (RELEASED), bug fixes and improvements of the version itself only.
+released (RELEASED), bug fixes and improvements of the version itself only. When the stable version before
+it was not released either (the first dev build after a skipped stable), the full section of that stable
+version follows: its new features after those of the dev, its fixes after those of the dev.
 
 Each group is a title followed by its changes, without version headings:
 
@@ -105,21 +107,30 @@ def parse(path):
 
 
 def select(sections, version, released=()):
+    """(sections of the new features, sections of the fixes and improvements), newest first."""
     index = next((i for i, s in enumerate(sections) if s["version"] == version), None)
     if index is None:
         raise SystemExit(f"Version {version} not found in changelog")
     if "-dev" not in version:
-        return [sections[index]]
-    selected = []
+        return [sections[index]], [sections[index]]
+    selected, stable = [], None
     for section in sections[index:]:
         if "-dev" not in section["version"]:
+            # A stable version that was not released: its full changelog follows
+            if section["version"] not in released and section["groups"]:
+                stable = section
             break
         # A dev that was already released listed its own features
         if section["version"] != version and section["version"] in released:
             break
         if section["groups"]:
             selected.append(section)
-    return selected[:DEV_FEATURE_SECTIONS]
+    features = selected[:DEV_FEATURE_SECTIONS]
+    fixes = [s for s in features if s["version"] == version]
+    if stable:
+        features.append(stable)
+        fixes.append(stable)
+    return features, fixes
 
 
 def read_mod_features(path):
@@ -164,17 +175,19 @@ def main():
 
     version = args.version.lstrip("v")
     released = read_released(args.released) if args.released else set()
-    selected = select(parse(args.changelog), version, released)
+    feature_sections, fix_sections = select(parse(args.changelog), version, released)
     mod_fixes = read_version_items(args.mod_fixes, version) if args.mod_fixes else []
     extra_features = read_version_items(args.extra_features, version) if args.extra_features else []
     mod_features = read_mod_features(args.mod_features) if args.mod_features else []
 
     groups = []
     for index, (_, title) in enumerate(GROUPS):
-        # New features: all selected versions. Fixes and improvements: the version itself only.
-        sections = selected if index == 0 else [s for s in selected if s["version"] == version]
-        items = [item for s in sections if index in s["groups"]
-                 for item in s["groups"][index]]
+        # New features: all selected versions. Fixes and improvements: the version itself (and a skipped stable).
+        sections = feature_sections if index == 0 else fix_sections
+        items = []
+        for item in (item for s in sections if index in s["groups"] for item in s["groups"][index]):
+            if item not in items:  # A change listed again in a later version
+                items.append(item)
         if index == 0:
             items += extra_features
         if index == FIX_GROUP:

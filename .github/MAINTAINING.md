@@ -12,6 +12,10 @@ Every published build becomes the latest release. The workflow builds the offici
 
 The changelog is generated from the Morphe changelog (YouTube Music only), in the same way as in `youtube-morphe`. Fixes of the mod go under `## <patches version>` in `notes/mod-fixes.md`; important features of skipped versions under `## <patches version>` in `notes/extra-features.md`; the features of the mod are in `notes/mod-features.md`.
 
+The first dev build after a stable version that was not released here (such as 2.3.0-dev.1 after 2.2.0) also lists the full changelog of that stable version, after the changes of the dev version.
+
+**Actions → Update release notes → Run workflow** (`tag`: empty for the latest release) generates the changelog of a published release again from the current `notes/` and `scripts/changelog.py`, without a new build: the release notes keep their files table, and the in-app changelog (`DL_BASE_URL/music/updates/*.json` and `updates/*.json`) is replaced while it is still the one of that release.
+
 ## 4PDA post
 
 `notes/4pda-post.txt` is the post for the 4PDA topic, updated for each release (YT Music and patches versions, What's new, links), in the same layout as the post of `youtube-morphe`.

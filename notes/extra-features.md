@@ -5,7 +5,6 @@
 ## 2.3.0-dev.1
 
 * **Downloads:** Quick download menu with qualities, file sizes and the MP3 marked (YTindir)
-* **Third-party lyrics:** Lyrics panel detection various fixes
 
 ## 2.1.0-dev.11
 
