@@ -8,7 +8,7 @@
    - `publish`: unchecked builds a test APK (clone variant only) into the run's *Artifacts*
    - `update_preview` (test builds): the APK offers the latest release, to see the update dialog
 
-Every published build becomes the latest release. The workflow builds the official Morphe patches with the additions in `extras/`, verifies package name and signature, uploads the two APKs to R2, publishes the release (`YT_Music_Settings_v<patches version>.txt` with the settings of `settings/defaults.json`, and links to the APKs on R2) and updates `updates/*.json` for the in-app update check.
+Every published build becomes the latest release. The workflow builds the official Morphe patches with the changes in `addons/morphe/` and the additions in `extras/`, verifies package name and signature, uploads the two APKs to R2, publishes the release (`YT_Music_Settings_v<patches version>.txt` with the settings of `settings/defaults.json`, and links to the APKs on R2) and updates `updates/*.json` for the in-app update check.
 
 The changelog is generated from the Morphe changelog (YouTube Music only), in the same way as in `youtube-morphe`. Fixes of the mod go under `## <patches version>` in `notes/mod-fixes.md`; important features of skipped versions under `## <patches version>` in `notes/extra-features.md`; the features of the mod are in `notes/mod-features.md`.
 
@@ -28,7 +28,8 @@ The changelog is generated from the Morphe changelog (YouTube Music only), in th
 |---|---|
 | `settings/defaults.json` | Recommended settings (Morphe settings export). Each setting is applied once: on first install, or on the update that adds it. |
 | `branding/` | App icon (`mipmap-*`), header logo and notification icon (`drawable-*`) |
-| `extras/` | Additional patches: theme defaults, default settings, update check, restart on update, experimental notice. Strings of `extras/strings/<locale>/` are appended to the YouTube Music ones |
+| `extras/` | Additional patches: theme defaults, menu colors, default settings, update check, restart on update, experimental notice. Strings of `extras/strings/<locale>/` are appended to the YouTube Music ones (strings that Morphe already has are left out) |
+| `addons/morphe/` | Changes of the mod to official Morphe files (`git apply` patches, applied in name order; skipped once Morphe includes them, the build fails if one no longer applies). `quick-download-quality-menu.patch` is the same file as in `youtube-morphe`; `sheet-menus-color.patch` builds on it. Their new strings in other languages go to `extras/strings/` |
 
 Variant options (package, theme defaults) are set in `build_variant` calls of `.github/workflows/release.yml`.
 

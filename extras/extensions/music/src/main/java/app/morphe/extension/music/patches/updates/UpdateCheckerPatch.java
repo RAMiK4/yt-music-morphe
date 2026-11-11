@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.text.style.LeadingMarginSpan;
 import android.text.style.LineBackgroundSpan;
 import android.text.style.RelativeSizeSpan;
@@ -196,7 +197,7 @@ public final class UpdateCheckerPatch {
         final String version = str("morphe_update_dialog_version",
                 json.optString("yt_version"), json.optString("patches"));
         final String changelog = localizedChangelog(activity, json).trim();
-        final CharSequence message = changelog.isEmpty() ? version : styledChangelog(version, changelog);
+        final CharSequence message = styledChangelog(version, str("morphe_update_install_note"), changelog);
 
         var dialogPair = CustomDialog.create(
                 activity,
@@ -204,7 +205,11 @@ public final class UpdateCheckerPatch {
                 message,                                 // Message.
                 null,                                    // No EditText.
                 str("morphe_update_dialog_download"),   // OK button text.
-                () -> openUrl(activity, apkUrl),         // OK button action.
+                () -> {                                  // OK button action.
+                    openUrl(activity, apkUrl);
+                    // The browser downloads the APK, which is not installed by itself.
+                    Utils.showToastLong(str("morphe_update_install_note"));
+                },
                 () -> {},                                // Cancel: remind later.
                 str("morphe_update_dialog_skip"),       // Neutral button text.
                 () -> SKIPPED_BUILD.save(latest),        // Neutral: skip this build.
@@ -269,10 +274,17 @@ public final class UpdateCheckerPatch {
     /**
      * Section titles of the changelog are bold with a thin, faint rule under them, like the
      * headings of the release notes on GitHub. Separator lines of older changelogs are dropped.
+     * The note below the version reminds that the downloaded APK has to be installed.
      */
-    private static CharSequence styledChangelog(String version, String changelog) {
+    private static CharSequence styledChangelog(String version, String note, String changelog) {
         SpannableStringBuilder text = new SpannableStringBuilder(version);
-        final int ruleColor = (ThemeUtils.getAppForegroundColor() & 0x00FFFFFF) | 0x33000000;
+        final int foreground = ThemeUtils.getAppForegroundColor();
+        final int ruleColor = (foreground & 0x00FFFFFF) | 0x33000000;
+        final int noteStart = text.append("\n").length();
+        text.append(note);
+        text.setSpan(new ForegroundColorSpan((foreground & 0x00FFFFFF) | 0xB3000000), noteStart,
+                text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        text.setSpan(new RelativeSizeSpan(0.9f), noteStart, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         // Wrapped lines of an item start under its text, not under the bullet.
         Paint bulletPaint = new Paint();
         bulletPaint.setTextSize(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16,
