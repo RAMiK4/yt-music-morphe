@@ -1,16 +1,16 @@
 diff --git a/extensions/music/src/main/java/app/morphe/extension/music/patches/DownloadsPatch.java b/extensions/music/src/main/java/app/morphe/extension/music/patches/DownloadsPatch.java
-index 376370e..31e1fd9 100644
+index 3a08b5d0..753f5882 100644
 --- a/extensions/music/src/main/java/app/morphe/extension/music/patches/DownloadsPatch.java
 +++ b/extensions/music/src/main/java/app/morphe/extension/music/patches/DownloadsPatch.java
-@@ -28,6 +28,7 @@ import app.morphe.extension.music.patches.downloads.DownloadedMark;
- import app.morphe.extension.music.patches.downloads.LocalDownloadManager;
- import app.morphe.extension.music.patches.downloads.PlaylistDownloader;
+@@ -26,6 +26,7 @@ import java.util.regex.Pattern;
+ import app.morphe.extension.music.patches.components.PlaylistPageFilter;
+ import app.morphe.extension.music.patches.components.SongMenuFilter;
  import app.morphe.extension.music.patches.spoof.SpoofVideoStreamsPatch;
 +import app.morphe.extension.music.patches.theme.MenuColor;
  import app.morphe.extension.music.settings.Settings;
  import app.morphe.extension.music.shared.VideoInformation;
  import app.morphe.extension.shared.Logger;
-@@ -228,7 +229,7 @@ public final class DownloadsPatch {
+@@ -355,7 +356,7 @@ public final class DownloadsPatch extends BaseInAppDownloadsPatch {
          try {
              QuickDownloadMenu.create(activity, videoId,
                      // The app draws its sheets lighter than its background.
@@ -20,10 +20,10 @@ index 376370e..31e1fd9 100644
                      SpoofVideoStreamsPatch.getAvailableClients(),
                      Settings.SPOOF_VIDEO_STREAMS_CLIENT_TYPE.get(),
 diff --git a/extensions/music/src/main/java/app/morphe/extension/music/patches/PlaylistTagsDialogs.java b/extensions/music/src/main/java/app/morphe/extension/music/patches/PlaylistTagsDialogs.java
-index 31052ea..97b6fb5 100644
+index ef88ac92..9e8bb33a 100644
 --- a/extensions/music/src/main/java/app/morphe/extension/music/patches/PlaylistTagsDialogs.java
 +++ b/extensions/music/src/main/java/app/morphe/extension/music/patches/PlaylistTagsDialogs.java
-@@ -44,6 +44,7 @@ import java.util.Map;
+@@ -45,6 +45,7 @@ import java.util.Objects;
  import java.util.Set;
  import java.util.function.Consumer;
  
@@ -31,7 +31,7 @@ index 31052ea..97b6fb5 100644
  import app.morphe.extension.shared.Logger;
  import app.morphe.extension.shared.ResourceUtils;
  import app.morphe.extension.shared.Utils;
-@@ -84,7 +85,7 @@ public final class PlaylistTagsDialogs {
+@@ -85,7 +86,7 @@ public final class PlaylistTagsDialogs {
  
              // The app draws its sheets lighter than its background.
              SheetBottomDialog.DraggableLinearLayout mainLayout = SheetBottomDialog.createMainLayout(
@@ -41,7 +41,7 @@ index 31052ea..97b6fb5 100644
              TextView title = createLineText(context, str("morphe_music_playlist_tags_assign_title",
                      PlaylistTagsStore.getPlaylistTitle(playlistId)), 20);
 diff --git a/extensions/music/src/main/java/app/morphe/extension/music/patches/soundproof/ui/SoundProofSheet.java b/extensions/music/src/main/java/app/morphe/extension/music/patches/soundproof/ui/SoundProofSheet.java
-index 36def50..c10f2cd 100644
+index b49acf4b..7d261fa0 100644
 --- a/extensions/music/src/main/java/app/morphe/extension/music/patches/soundproof/ui/SoundProofSheet.java
 +++ b/extensions/music/src/main/java/app/morphe/extension/music/patches/soundproof/ui/SoundProofSheet.java
 @@ -38,7 +38,9 @@ import app.morphe.extension.music.patches.soundproof.domain.ArtistRecord;

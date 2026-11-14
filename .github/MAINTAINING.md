@@ -10,7 +10,7 @@
 
 Every published build becomes the latest release. The workflow builds the official Morphe patches with the changes in `addons/morphe/` and the additions in `extras/`, verifies package name and signature, uploads the two APKs to R2, publishes the release (`YT_Music_Settings_v<patches version>.txt` with the settings of `settings/defaults.json`, and links to the APKs on R2) and updates `updates/*.json` for the in-app update check.
 
-The changelog is generated from the Morphe changelog (YouTube Music only), in the same way as in `youtube-morphe`. Fixes of the mod go under `## <patches version>` in `notes/mod-fixes.md`; important features of skipped versions under `## <patches version>` in `notes/extra-features.md`; the features of the mod are in `notes/mod-features.md`.
+The changelog is generated from the Morphe changelog (YouTube Music only), in the same way as in `youtube-morphe`. Bug fixes are not listed one by one: the notes end with the heading `🔧 Bug fixes and other improvements`, followed in the release notes by the reminder to install the downloaded APK from the Downloads folder (`notes/mod-fixes.md` is kept as a record only); important features of skipped versions under `## <patches version>` in `notes/extra-features.md`; the features of the mod are in `notes/mod-features.md`.
 
 The first dev build after a stable version that was not released here (such as 2.3.0-dev.1 after 2.2.0) also lists the full changelog of that stable version, after the changes of the dev version.
 

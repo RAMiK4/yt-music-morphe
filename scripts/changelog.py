@@ -2,20 +2,21 @@
 """
 Builds the YouTube Music part of the Morphe patches changelog for a patches version.
 
-Stable version: its own section (it already lists everything since the previous stable).
-Dev version: new features of the version itself, plus those of the previous dev when that one was not
-released (RELEASED), bug fixes and improvements of the version itself only. When the stable version before
-it was not released either (the first dev build after a skipped stable), the full section of that stable
-version follows: its new features after those of the dev, its fixes after those of the dev.
+Stable version: the new features of its own section (it already lists everything since the previous stable).
+Dev version: the new features of all dev versions since the last released one (RELEASED). When the stable
+version before them was not released either (the first dev build after a skipped stable), the new features
+of that stable version follow.
 
+Bug fixes and improvements are not listed: the notes always end with a closing heading instead,
+and the release notes with the install note under it.
 Each group is a title followed by its changes, without version headings:
 
     ✨ New Features
     • ...
     🌟 Mod Features     (from MOD_FEATURES)
     • ...
-    🐛 Bug Fixes
-    • ...              (Morphe fixes, then the fixes of the mod from MOD_FIXES)
+    🔧 Bug fixes and other improvements
+    ⓘ After downloading, ...   (release notes only)
 
 The in-app dialog shows the titles bold with a thin rule under them. The release notes
 use "## <title>" headings (GitHub draws the same kind of rule) and add the files table.
@@ -24,15 +25,13 @@ Newer versions come first; within a version the order of the Morphe changelog is
 
 RELEASED: patches versions that already have a release of the mod, one per line or separated by spaces.
 
-MOD_FIXES: "## <patches version>" headings with "* " items, listed after the Morphe fixes of that version.
-
 EXTRA_FEATURES: same format, listed after the Morphe new features of that version. Only for releases that
 skip versions (for example the first dev build after a stable one): important features of the skipped
 versions that the selected sections do not list. Not a general rule; most versions have no section.
 
 The Markdown file is the release notes, the text file is the changelog of the in-app update dialog.
 
-Usage: changelog.py CHANGELOG.md VERSION OUT_MARKDOWN OUT_TEXT [--mod-features FILE] [--mod-fixes FILE]
+Usage: changelog.py CHANGELOG.md VERSION OUT_MARKDOWN OUT_TEXT [--mod-features FILE]
                     [--extra-features FILE] [--released FILE]
 """
 import argparse
@@ -41,16 +40,19 @@ import re
 SECTION = re.compile(r"^##\s+\[([^\]]+)\]")
 OTHER_APPS = ("youtube", "reddit")
 SKIPPED_GROUPS = ("app support",)
-DEV_FEATURE_SECTIONS = 2  # Dev changelogs: at most the version itself and the unreleased dev before it.
 
-# Change types in the order they are shown. Older changelogs have titles without emoji.
+# Change types of the Morphe changelog. Older changelogs have titles without emoji.
+# Only the new features are listed.
 GROUPS = (
     ("feature", "✨ New Features"),
     ("fix", "🐛 Bug Fixes"),
     ("improvement", "🔧 Improvements"),
 )
-FIX_GROUP = 1
+FEATURE_GROUP = 0
 MOD_FEATURES_TITLE = "🌟 Mod Features"
+CLOSING_TITLE = "🔧 Bug fixes and other improvements"
+# Release notes only: the APK downloaded from the release page is installed by hand.
+INSTALL_NOTE = "ⓘ After downloading, don't forget to install the new version from the Downloads folder"
 
 
 def clean(text):
@@ -64,7 +66,7 @@ def clean(text):
 def strip_app(item):
     """'**YouTube Music - Scope:** text' -> '**Scope:** text', '**YouTube Music:** text' -> 'text'."""
     # Shared scopes such as "YouTube / YouTube Music - Scope" are shortened the same way
-    apps = r"(?:YouTube\s*/\s*)?YouTube Music(?:\s*/\s*[^*:-]+?)?"
+    apps = r"(?:YouTube\s*[/&]\s*)?YouTube Music(?:\s*[/&]\s*[^*:-]+?)?"
     item = re.sub(rf"^\*\*{apps}:\*\*\s*", "", item)
     return re.sub(rf"^\*\*{apps} - ", "**", item)
 
@@ -75,7 +77,7 @@ def relevant(item):
         return True  # General change.
     scope = m.group(1).lower()
     # "YouTube / YouTube Music - Scope": the apps before " - "; YouTube Music among them keeps the change
-    apps = [app.strip() for app in scope.split(" - ")[0].split("/")]
+    apps = [app.strip() for app in re.split(r"[/&]", scope.split(" - ")[0])]
     if "youtube music" in apps:
         return True
     return not any(app in OTHER_APPS for app in apps)
@@ -107,30 +109,25 @@ def parse(path):
 
 
 def select(sections, version, released=()):
-    """(sections of the new features, sections of the fixes and improvements), newest first."""
+    """Sections whose new features are listed, newest first."""
     index = next((i for i, s in enumerate(sections) if s["version"] == version), None)
     if index is None:
         raise SystemExit(f"Version {version} not found in changelog")
     if "-dev" not in version:
-        return [sections[index]], [sections[index]]
-    selected, stable = [], None
+        return [sections[index]]
+    selected = []
     for section in sections[index:]:
         if "-dev" not in section["version"]:
-            # A stable version that was not released: its full changelog follows
+            # A stable version that was not released: its new features follow
             if section["version"] not in released and section["groups"]:
-                stable = section
+                selected.append(section)
             break
         # A dev that was already released listed its own features
         if section["version"] != version and section["version"] in released:
             break
         if section["groups"]:
             selected.append(section)
-    features = selected[:DEV_FEATURE_SECTIONS]
-    fixes = [s for s in features if s["version"] == version]
-    if stable:
-        features.append(stable)
-        fixes.append(stable)
-    return features, fixes
+    return selected
 
 
 def read_mod_features(path):
@@ -168,35 +165,27 @@ def main():
     parser.add_argument("out_md")
     parser.add_argument("out_txt")
     parser.add_argument("--mod-features")
-    parser.add_argument("--mod-fixes")
     parser.add_argument("--extra-features")
     parser.add_argument("--released")
     args = parser.parse_args()
 
     version = args.version.lstrip("v")
     released = read_released(args.released) if args.released else set()
-    feature_sections, fix_sections = select(parse(args.changelog), version, released)
-    mod_fixes = read_version_items(args.mod_fixes, version) if args.mod_fixes else []
+    selected = select(parse(args.changelog), version, released)
     extra_features = read_version_items(args.extra_features, version) if args.extra_features else []
     mod_features = read_mod_features(args.mod_features) if args.mod_features else []
 
     groups = []
-    for index, (_, title) in enumerate(GROUPS):
-        # New features: all selected versions. Fixes and improvements: the version itself (and a skipped stable).
-        sections = feature_sections if index == 0 else fix_sections
-        items = []
-        for item in (item for s in sections if index in s["groups"] for item in s["groups"][index]):
-            if item not in items:  # A change listed again in a later version
-                items.append(item)
-        if index == 0:
-            items += extra_features
-        if index == FIX_GROUP:
-            items += mod_fixes
-        if items:
-            groups.append((title, items))
-        # The features of the mod follow the new features of Morphe.
-        if index == 0 and mod_features:
-            groups.append((MOD_FEATURES_TITLE, mod_features))
+    features = []
+    for item in (item for s in selected for item in s["groups"].get(FEATURE_GROUP, [])):
+        if item not in features:  # A change listed again in a later version
+            features.append(item)
+    features += extra_features
+    if features:
+        groups.append((GROUPS[FEATURE_GROUP][1], features))
+    # The features of the mod follow the new features of Morphe.
+    if mod_features:
+        groups.append((MOD_FEATURES_TITLE, mod_features))
 
     md, txt = [], []
     for title, items in groups:
@@ -208,6 +197,10 @@ def main():
         txt += [title]
         txt += [f"• {plain(item)}" for item in items]
         txt.append("")
+
+    # Fixes are not listed one by one; a closing heading ends the notes.
+    md += [f"## {CLOSING_TITLE}", "", INSTALL_NOTE]
+    txt.append(CLOSING_TITLE)
 
     open(args.out_md, "w", encoding="utf-8").write("\n".join(md).strip() + "\n")
     open(args.out_txt, "w", encoding="utf-8").write("\n".join(txt).strip() + "\n")
