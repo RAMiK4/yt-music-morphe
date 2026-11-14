@@ -22,7 +22,7 @@ The first dev build after a stable version that was not released here (such as 2
 
 - An empty line after each `[spoiler=...]` title
 - No "test version" note next to dev patches versions, users could misread it
-- What's new is a plain list, without a line for the YT Music and patches versions. A stable version lists its full changelog, the best YT Music features first; a dev version lists the new features of the last 2 dev versions
+- What's new is a plain list, without a line for the YT Music and patches versions. A stable version lists its full changelog, the best YT Music features first; a dev version lists the new features of all dev versions since the last release
 - Link titles in `[color="#808080"]`, followed by the file size
 - Order: header, What's new, Mod features (spoiler), Download (one line per variant), Mod information, Help (MicroG and playback problems). Name color `#ff0040`
 - The recommended settings file is not linked in the post, it is on the release page
